@@ -10,7 +10,7 @@ if __name__ == "__main__":
         i = 10
         print '"""'
         print 'Working Time for floats:'
-        while i < 10000000:
+        while i < 100000:
             os.system("rm test.txt")
             os.system("python generate_numbers.py "+str(i)+" > test.txt")
             tstr = 'os.system("python '+file_to_execute+' '+str(i)+' < test.txt")'
@@ -22,3 +22,9 @@ if __name__ == "__main__":
             print "s"
             i *= 10
         print '"""'
+
+"""
+
+Example Usage - python test.py merge_sort.py
+
+"""
