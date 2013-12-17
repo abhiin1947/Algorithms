@@ -22,9 +22,9 @@ def merge_sort(input):
     right = input[l/2:]
     return merge(merge_sort(left),merge_sort(right))
 
-from sys import argv
 
 if __name__ == "__main__":
+    from sys import argv
     input = []
     nos = int(argv[1])
     for i in range(0,nos):
@@ -34,10 +34,10 @@ if __name__ == "__main__":
 
 """
 Working Time for floats:
-100      - 0m0.021s
-1000     - 0m0.030s
-10000    - 0m0.094s
-100000   - 0m0.857s
-1000000  - 0m10.525s
-10000000 - ?m??.???s
+10         -  0.0142028331757 s
+100        -  0.0147461891174 s
+1000       -  0.0219941139221 s
+10000      -  0.0828061103821 s
+100000     -  0.853661060333 s
+1000000    -  10.2086868286 s
 """

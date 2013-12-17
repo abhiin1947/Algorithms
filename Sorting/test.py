@@ -1,4 +1,5 @@
 import os
+import timeit
 from sys import argv
 
 if __name__ == "__main__":
@@ -7,10 +8,17 @@ if __name__ == "__main__":
     else:
         file_to_execute = argv[1]
         i = 10
-        while i < 100000000:
+        print '"""'
+        print 'Working Time for floats:'
+        while i < 10000000:
             os.system("rm test.txt")
             os.system("python generate_numbers.py "+str(i)+" > test.txt")
-            out = os.system("time python "+file_to_execute+" "+str(i)+" < test.txt")
-            print "for ",i," numbers the out is:"
-            print out
+            tstr = 'os.system("python '+file_to_execute+' '+str(i)+' < test.txt")'
+            #print tstr
+            out = timeit.timeit(tstr,setup = "import os",number =1)
+            #print "for ",i," numbers the out is:"
+            print str(i),(9-len(str(i)))*" ","- ",
+            print out,
+            print "s"
             i *= 10
+        print '"""'
